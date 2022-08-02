@@ -1,0 +1,74 @@
+/* This TemplateMethod telling as how to make tea and latte */
+/* Code Gym - Metoda szablonowa*/
+
+public class TemplateMethod {
+    public static void main(String[] args) {
+
+    }
+}
+
+abstract class DrinkMaker {
+    abstract void getRightCup();
+
+    abstract void addIngredients();
+
+    abstract void pour();
+
+    public void makeDrink() {
+        getRightCup();
+        addIngredients();
+        pour();
+    }
+
+}
+
+class LatteMaker extends DrinkMaker {
+    @Override
+    void getRightCup() {
+        System.out.println("Weź kubek na latte");
+    }
+
+    @Override
+    void addIngredients() {
+        System.out.println("Zrób kawę");
+    }
+
+    @Override
+    void pour() {
+        System.out.println("Napełnij spienionym mlekiem");
+    }
+}
+
+class TeaMaker extends DrinkMaker {
+    @Override
+    void getRightCup() {
+        System.out.println("Weź kubek na herbatę");
+    }
+
+    @Override
+    void addIngredients() {
+        System.out.println("Dodaj liście herbaty");
+    }
+
+    @Override
+    void pour() {
+        System.out.println("Napełnij wrzątkiem");
+    }
+}
+
+class Output {
+    public static void main(String[] args) {
+        TeaMaker t = new TeaMaker();
+        LatteMaker l = new LatteMaker();
+
+        System.out.println("To make tea :");
+        System.out.println();
+        t.makeDrink();
+        System.out.println("\n");
+
+        System.out.println("To make Latte :");
+
+        System.out.println();
+        l.makeDrink();
+    }
+}
